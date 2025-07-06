@@ -41,15 +41,6 @@ export default function Home() {
 
   // Function to handle button click
   const handleButtonClick = (href, title) => {
-    // Check if the button is disabled
-    if (title === "E-Cevap" || title === "Öğrenci Bilgi" || title === "Yazılı Örnekleri") {
-      toast({
-        title: "Bu özellik şu anda desteklenmiyor",
-        duration: 2500,
-      })
-      return
-    }
-
     clearCookies()
     clearStorage()
 
@@ -60,6 +51,12 @@ export default function Home() {
       router.push("/yazilitarihleri")
     } else if (href === "dersprogrami.html") {
       router.push("/dersprogrami")
+    } else if (href === "e-cevap.html") {
+      router.push("/e-cevap")
+    } else if (href === "ogrencibilgi.html") {
+      router.push("/ogrencibilgi")
+    } else if (href === "https://brtplus.wixsite.com/dersmatik/forum/9-sinif") {
+      router.push("/yaziliornekleri")
     } else {
       // External link
       window.location.href = href
@@ -161,9 +158,9 @@ export default function Home() {
     },
   ]
 
-  // Check if button is disabled
-  const isButtonDisabled = (title) => {
-    return title === "E-Cevap" || title === "Öğrenci Bilgi" || title === "Yazılı Örnekleri"
+  // Check if button is disabled - sadece pageState'e göre kontrol et
+  const isButtonDisabled = (pageState) => {
+    return pageState === "DEFAULT"
   }
 
   return (
@@ -178,7 +175,7 @@ export default function Home() {
         <div className="flex flex-wrap justify-center gap-3 mt-2 p-3 max-w-4xl mx-auto">
           {buttons.map((button, index) => {
             const pageState = pageStates[button.page] || "DEFAULT"
-            const disabled = pageState === "DEFAULT" || isButtonDisabled(button.title)
+            const disabled = pageState === "DEFAULT"
 
             if (pageState === "OFF") {
               return null
@@ -198,11 +195,7 @@ export default function Home() {
               >
                 <div
                   className={`flex flex-col items-center justify-center h-full w-full 
-                    ${
-                      isButtonDisabled(button.title)
-                        ? "bg-gradient-to-b from-gray-400 to-gray-500"
-                        : "bg-gradient-to-b from-blue-400 to-blue-600"
-                    } 
+                    bg-gradient-to-b from-blue-400 to-blue-600
                     text-white no-underline transition-all duration-300 shadow-lg
                     active:scale-95 active:shadow-md`}
                 >
@@ -227,4 +220,3 @@ export default function Home() {
     </div>
   )
 }
-

@@ -123,8 +123,16 @@ export default function YaziliTarihleri() {
   return (
     <div className={`min-h-screen ${isDarkMode ? "bg-[#1e1e2f] text-[#e0e0e0]" : "bg-[#f9fafc] text-[#333]"}`}>
       {/* Top bar */}
-      <div className="bg-gradient-to-r from-[#6a11cb] to-[#2575fc] text-white p-4 text-center text-xl font-bold shadow-md">
-        Yazılı Tarihleri
+      <div className="bg-gradient-to-r from-[#6a11cb] to-[#2575fc] text-white p-3 flex items-center shadow-md">
+        <button
+          onClick={() => window.history.back()}
+          className="mr-3 p-1 hover:bg-white/20 rounded-full transition-colors"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <h1 className="text-lg font-bold">Yazılı Tarihleri</h1>
       </div>
 
       {/* Content */}
@@ -132,7 +140,7 @@ export default function YaziliTarihleri() {
         <div
           className={`max-w-[800px] ${
             isDarkMode ? "bg-[#2a2a3b] text-[#e0e0e0]" : "bg-white text-[#333]"
-          } rounded-xl shadow-lg p-7 text-lg leading-8`}
+          } rounded-xl shadow-lg p-7 text-base leading-7`}
           dangerouslySetInnerHTML={{ __html: content }}
         />
       </div>
@@ -174,4 +182,3 @@ export default function YaziliTarihleri() {
     </div>
   )
 }
-
