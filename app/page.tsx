@@ -166,7 +166,10 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Top bar with just text (no background image) */}
-      <div className="bg-black text-white py-3 px-5 text-left text-2xl font-semibold">MSAL Öğrenci</div>
+      <div className="bg-black text-white py-3 px-5 text-left text-2xl font-semibold flex justify-between items-center">
+        <span>MSAL Öğrenci</span>
+        <span className="text-sm font-normal">10/D</span>
+      </div>
 
       {/* Loading text */}
       {loading ? (
