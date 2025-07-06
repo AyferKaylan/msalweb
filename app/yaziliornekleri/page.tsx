@@ -17,10 +17,10 @@ export default function YaziliOrnekleri() {
       </div>
 
       {/* Iframe container */}
-      <div className="flex-1">
+      <div className="h-[calc(100vh-60px)]">
         <iframe
           src="https://dersmatik.vercel.app"
-          className="w-full h-full border-0"
+          className="w-full h-full border-0 block"
           title="Yazılı Örnekleri"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen

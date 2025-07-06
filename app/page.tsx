@@ -216,7 +216,7 @@ export default function Home() {
         </div>
       )}
 
-      <div className="text-xs text-gray-500 mt-4">Sürüm 4.0 | HBK</div>
+      <div className="text-xs text-gray-500 mt-4">Sürüm 4.4 | HBK</div>
     </div>
   )
 }

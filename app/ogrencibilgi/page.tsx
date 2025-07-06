@@ -17,10 +17,10 @@ export default function OgrenciBilgi() {
       </div>
 
       {/* Iframe container */}
-      <div className="flex-1">
+      <div className="h-[calc(100vh-60px)]">
         <iframe
-          src="https://ogrencibilgisistemi.vercel.app"
-          className="w-full h-full border-0"
+          src="https://ogrencibilgisistemi.vercel.app/10d"
+          className="w-full h-full border-0 block"
           title="Öğrenci Bilgi Sistemi"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
